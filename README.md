@@ -3,6 +3,7 @@
 > This is an API project made with Python and Bottle using a virtual environment
 
 [![Build Status](https://badgen.net/travis/julio-cesar-development/todo-vue?icon=travis)](https://travis-ci.org/julio-cesar-development/ipv6-converter-api)
+![License](https://badgen.net/badge/license/MIT/blue)
 [![GitHub Status](https://badgen.net/github/status/julio-cesar-development/ipv6-converter-api)](https://github.com/julio-cesar-development/ipv6-converter-api)
 
 ## API Specification
@@ -49,13 +50,13 @@ python -u app/server.py
 > Example of usage with cURL
 
 ```bash
-# Endpoint /api/v1/valid_ipv4
+# Endpoint /api/v1/valid_ipv4 running at http://localhost
 curl --request GET \
   --url 'http://localhost:8080/api/v1/valid_ipv4?ipv4=192.168.100.255' \
   --header 'content-type: application/json'
-# Endpoint /api/v1/convert_ipv6
+# Endpoint /api/v1/convert_ipv6 running at http://localhost
 curl --request GET \
-  --url 'http://192.168.0.16:8080/api/v1/convert_ipv6?ipv6_prefix=2000:ffff:ffff:ffff&mac=ff-ff-ff-ff-ff-ff' \
+  --url 'http://localhost:8080/api/v1/convert_ipv6?ipv6_prefix=2000:ffff:ffff:ffff&mac=ff-ff-ff-ff-ff-ff' \
   --header 'content-type: application/json'
 ```
 

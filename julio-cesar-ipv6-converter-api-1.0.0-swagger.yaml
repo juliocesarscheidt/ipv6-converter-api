@@ -26,6 +26,8 @@ paths:
         description: The MAC Address
 
     get:
+      tags:
+      - "Converter"
       summary: Get the whole IPv6 formed with the given IPv6 prefix and Mac Address
       responses:
         200:
@@ -49,6 +51,8 @@ paths:
         description: The IPv6
 
     get:
+      tags:
+      - "Validation"
       summary: Get the validation for the given IPv6
       responses:
         200:
@@ -72,6 +76,8 @@ paths:
         description: The IPv4
 
     get:
+      tags:
+      - "Validation"
       summary: Get the validation for the given IPv4
       responses:
         200:
@@ -95,6 +101,8 @@ paths:
         description: The MAC Address
 
     get:
+      tags:
+      - "Validation"
       summary: Get the validation for the given MAC Address
       responses:
         200:
