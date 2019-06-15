@@ -1,10 +1,9 @@
-language: node_js
-node_js:
-  - '8'
-cache:
-  directories:
-    - node_modules
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker image build --tag juliocesarmidia/ipv6-converter-api .
+
 script:
-  - npm run test:unit
-after_script:
-  - cat ./coverage/lcov.info | coveralls
+  - docker container run --name ipv6-converter-api juliocesarmidia/ipv6-converter-api
