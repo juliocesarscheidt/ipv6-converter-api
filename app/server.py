@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from bottle import Bottle, route, run, request, response, HTTPResponse
 import re
 import os
@@ -27,6 +28,3 @@ def test():
   return HTTPResponse({ 'message': ipv6 }, 200)
 
 run(app, host=HOST, port=PORT, debug=DEBUG)
-
-# Example
-# http://localhost:8080/api/v1/convert?ip=2804-14c-87b5-9199&mac=00-1D-7D-F9-92-85

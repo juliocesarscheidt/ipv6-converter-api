@@ -17,8 +17,10 @@ RUN apt-get update -qq && \
 
 RUN apt-get install -y python3.7 python3-pip python-pip
 
-WORKDIR /app
-COPY . /app
+RUN mkdir /application
+WORKDIR /application
+COPY . /application
+RUN cd /application
 
 RUN pip install virtualenv
 
@@ -29,4 +31,6 @@ RUN ./venv/bin/activate
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "/usr/bin/python", "-u", "app/server.py" ]
+EXPOSE 8080
+
+ENTRYPOINT [ "/usr/bin/python", "-u", "./app/server.py" ]

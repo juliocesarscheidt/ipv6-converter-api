@@ -6,4 +6,4 @@ before_install:
   - docker image build --tag juliocesarmidia/ipv6-converter-api .
 
 script:
-  - docker container run --name ipv6-converter-api juliocesarmidia/ipv6-converter-api
+  - docker container run -d --name ipv6-converter-api -p 8080:8080 juliocesarmidia/ipv6-converter-api

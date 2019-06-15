@@ -5,6 +5,10 @@
 [![Build Status](https://badgen.net/travis/julio-cesar-development/todo-vue?icon=travis)](https://travis-ci.org/julio-cesar-development/ipv6-converter-api)
 [![GitHub Status](https://badgen.net/github/status/julio-cesar-development/ipv6-converter-api)](https://github.com/julio-cesar-development/ipv6-converter-api)
 
+## API Specification
+
+[See Specification - Swagger](https://app.swaggerhub.com/apis-docs/julio-cesar/ipv6-converter-api/1.0.0#/default/get_api_v1_convert)
+
 ## Project setup
 
 > Running with docker
@@ -13,7 +17,14 @@
 # Build the image
 docker image build --tag ipv6-converter-api .
 # Run the image
-docker container run --name ipv6-converter-api -p 8080:8080 ipv6-converter-api
+docker container run -d --name ipv6-converter-api -p 8080:8080 ipv6-converter-api
+```
+
+> Running with docker-compose
+
+```bash
+# Run the API
+docker-compose up -d api
 ```
 
 > Running appart

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 
 # Conversão do MAC em Host no SLACC utilizando o algoritmo EUI-64
