@@ -44,6 +44,21 @@ pip install -r requirements.txt
 python -u app/server.py
 ```
 
+## Usage
+
+> Example of usage with cURL
+
+```bash
+# Endpoint /api/v1/valid_ipv4
+curl --request GET \
+  --url 'http://localhost:8080/api/v1/valid_ipv4?ipv4=192.168.100.255' \
+  --header 'content-type: application/json'
+# Endpoint /api/v1/convert_ipv6
+curl --request GET \
+  --url 'http://192.168.0.16:8080/api/v1/convert_ipv6?ipv6_prefix=2000:ffff:ffff:ffff&mac=ff-ff-ff-ff-ff-ff' \
+  --header 'content-type: application/json'
+```
+
 ## Authors
 
 * **Julio Cesar** - *Initial work* - [Blackdevs](https://blackdevs.com.br)
