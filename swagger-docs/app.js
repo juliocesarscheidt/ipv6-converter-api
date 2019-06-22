@@ -3,15 +3,16 @@ const app = express();
 const proxy = require('express-http-proxy');
 
 const host = process.env.HOST || 'localhost';
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 const targetHost = process.env.TARGET_HOST || 'localhost';
-const targetPort = process.env.TARGET_PORT || 8080;
+const targetPort = process.env.TARGET_PORT || 5000;
 
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocumentValidIPv4 = YAML.load('./docs/julio-cesar-ipv6-converter-api-1.0.0-swagger.yaml');
 
+console.info(`API Proxy http://${targetHost}:${targetPort}/`);
 app.use('/api/v1', proxy(`http://${targetHost}:${targetPort}/`, {
     proxyReqPathResolver: (req) => {
       const reqUrl = req.url || '';

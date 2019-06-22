@@ -10,6 +10,16 @@
 
 [See Specification - Swagger](https://app.swaggerhub.com/apis-docs/julio-cesar/ipv6-converter-api/1.0.0#/default/get_api_v1_convert)
 
+## Project setup
+
+> To run all services you must execute the following command with docker-compose
+
+```bash
+# Build all images and run the containers
+docker-compose up -d
+# Then access http://localhost:8000/swagger-docs to see the swagger documentation
+```
+
 ## Project setup API
 
 > Running with docker
@@ -18,7 +28,7 @@
 # Build the image
 docker image build --tag ipv6-converter-api -f Dockerfile .
 # Run the image
-docker container run -d --name ipv6-converter-api -p 8080:8080 ipv6-converter-api
+docker container run -d --name ipv6-converter-api -p 5000:5000 ipv6-converter-api
 ```
 
 > Running with docker-compose
@@ -53,7 +63,7 @@ python -u app/server.py
 # Build the image
 docker image build --tag ipv6-converter-docs -f Dockerfile-docs .
 # Run the image
-docker container run -d --name ipv6-converter-docs -p 5000:5000 ipv6-converter-docs
+docker container run -d --name ipv6-converter-docs -p 8000:8000 ipv6-converter-docs
 ```
 
 > Running with docker-compose
@@ -76,16 +86,16 @@ npm start
 
 ## Usage
 
-> Example of usage with cURL
+> Example of API usage with cURL
 
 ```bash
-# Endpoint /api/v1/valid_ipv4 running at http://localhost:8080
+# Endpoint /api/v1/valid_ipv4 running at http://localhost:5000
 curl --request GET \
-  --url 'http://localhost:8080/api/v1/valid_ipv4?ipv4=192.168.100.255' \
+  --url 'http://localhost:5000/api/v1/valid_ipv4?ipv4=192.168.100.255' \
   --header 'content-type: application/json'
-# Endpoint /api/v1/convert_ipv6 running at http://localhost:8080
+# Endpoint /api/v1/convert_ipv6 running at http://localhost:5000
 curl --request GET \
-  --url 'http://localhost:8080/api/v1/convert_ipv6?ipv6_prefix=2000:ffff:ffff:ffff&mac=ff-ff-ff-ff-ff-ff' \
+  --url 'http://localhost:5000/api/v1/convert_ipv6?ipv6_prefix=2000:ffff:ffff:ffff&mac=ff-ff-ff-ff-ff-ff' \
   --header 'content-type: application/json'
 ```
 

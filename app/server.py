@@ -4,7 +4,7 @@ import re
 import os
 from ipv6_converter import convert_ipv6, valid_ipv6, valid_ipv4, valid_mac
 
-PORT = os.environ.get('PORT', '8080')
+PORT = os.environ.get('PORT', 5000)
 HOST = os.environ.get('HOST', '0.0.0.0')
 DEBUG = os.environ.get('DEBUG', True)
 

@@ -31,9 +31,9 @@ RUN ./venv/bin/activate
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8080
+EXPOSE 5000
 
 ENTRYPOINT [ "/usr/bin/python", "-u", "./app/server.py" ]
 
 # docker image build --tag juliocesarmidia/ipv6-converter-api -f Dockerfile .
-# docker container run -d --name ipv6-converter-api -p 8080:8080 juliocesarmidia/ipv6-converter-api
+# docker container run -d --name ipv6-converter-api -p 5000:5000 juliocesarmidia/ipv6-converter-api
