@@ -1,0 +1,19 @@
+{
+  "name": "swagger-docs",
+  "version": "1.0.0",
+  "description": "swagger docs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Julio Cesar <julio@blackdevs.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.17.1",
+    "express-http-proxy": "1.5.1",
+    "swagger-routes-express": "3.0.1",
+    "swagger-ui-express": "4.0.6",
+    "yamljs": "0.3.0"
+  }
+}

@@ -10,13 +10,13 @@
 
 [See Specification - Swagger](https://app.swaggerhub.com/apis-docs/julio-cesar/ipv6-converter-api/1.0.0#/default/get_api_v1_convert)
 
-## Project setup
+## Project setup API
 
 > Running with docker
 
 ```bash
 # Build the image
-docker image build --tag ipv6-converter-api .
+docker image build --tag ipv6-converter-api -f Dockerfile .
 # Run the image
 docker container run -d --name ipv6-converter-api -p 8080:8080 ipv6-converter-api
 ```
@@ -45,16 +45,45 @@ pip install -r requirements.txt
 python -u app/server.py
 ```
 
+## Project setup Docs
+
+> Running with docker
+
+```bash
+# Build the image
+docker image build --tag ipv6-converter-docs -f Dockerfile-docs .
+# Run the image
+docker container run -d --name ipv6-converter-docs -p 5000:5000 ipv6-converter-docs
+```
+
+> Running with docker-compose
+
+```bash
+# Run the docs
+docker-compose up -d docs
+```
+
+> Running appart
+
+```bash
+# Go to docs directory
+cd ./swagger-docs
+# Install dependencies
+npm i
+# Run server
+npm start
+```
+
 ## Usage
 
 > Example of usage with cURL
 
 ```bash
-# Endpoint /api/v1/valid_ipv4 running at http://localhost
+# Endpoint /api/v1/valid_ipv4 running at http://localhost:8080
 curl --request GET \
   --url 'http://localhost:8080/api/v1/valid_ipv4?ipv4=192.168.100.255' \
   --header 'content-type: application/json'
-# Endpoint /api/v1/convert_ipv6 running at http://localhost
+# Endpoint /api/v1/convert_ipv6 running at http://localhost:8080
 curl --request GET \
   --url 'http://localhost:8080/api/v1/convert_ipv6?ipv6_prefix=2000:ffff:ffff:ffff&mac=ff-ff-ff-ff-ff-ff' \
   --header 'content-type: application/json'

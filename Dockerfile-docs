@@ -1,0 +1,11 @@
+FROM node:alpine
+LABEL maintainer="julio@blackdevs.com.br"
+
+WORKDIR /app
+COPY ./swagger-docs/package.json ./
+RUN npm install
+COPY . .
+CMD ["npm", "start"]
+
+# docker image build --tag juliocesarmidia/ipv6-converter-docs -f Dockerfile-docs .
+# docker container run -d --name ipv6-converter-docs -p 5000:5000 juliocesarmidia/ipv6-converter-docsi
